@@ -15,6 +15,7 @@ pipeline {
     
 
     stage("build") {
+      agent { node {label 'master'}}
       steps {
         withDockerRegistry(credentialsId: 'docker-hub', url: 'https://index.docker.io/v1/') 
           sh 'docker build -t  linhvv2/flask-docker:v10'
