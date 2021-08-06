@@ -1,18 +1,13 @@
 pipeline {
 
-  agent none
-
-  environment {
-    DOCKER_IMAGE = "linhvv2/flask-docker"
-  }
+  agent any
 
   stages {
     stage("Test") {
-      agent {
           docker {
             image 'ubuntu:latest'
           }
-      }
+      
       }
     }
 
@@ -35,4 +30,4 @@ pipeline {
       echo "FAILED"
     }
   }
-}
+
