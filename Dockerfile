@@ -1,6 +1,6 @@
 FROM ubuntu:latest
-RUN apt-get install httpd -y
-RUN apt-get install htop -y
+RUN apt install nginx  -y
+RUN apt install vim -y
 WORKDIR /var/www/html
-ENTRYPOINT ["htop"]
+ENTRYPOINT ["vim"]
 CMD ["-D","FORCEGROUND"]
