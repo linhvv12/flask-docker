@@ -5,7 +5,7 @@ pipeline {
       DOCKER_IMAGE = "linhvv2/flask-docker"
   }
   stages{
-    stage('test'){
+    stage("test"){
      agent {
           docker {
             image 'ubuntu:latest'
@@ -15,9 +15,9 @@ pipeline {
     }
   
 
-    stage('build') {
+    stage("build") {
       steps {
-        agent { node {label 'master'}}
+        agent { node {label "master"}}
          withCredentials([usernamePassword(credentialsId: 'Docker-hub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
             sh 'echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin'
             sh "docker build -t ${DOCKER_IMAGE}"
