@@ -4,7 +4,9 @@ pipeline {
   stages{
     stage('clone stage'){
       steps{
-        git credentialsId: 'linhvv12', url: 'https://github.com/linhvv12/flask-docker.git'
+        git url: "https://github.com/linhvv12/flask-docker.git", credentialsId: '4314af2e-edd9-476b-a025-bcb03ff94345', branch: 'master'
+                sh 'echo $PWD'
+                sh 'ls -lh
       }
     }
   
