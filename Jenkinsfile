@@ -1,7 +1,7 @@
 pipeline {
 
   agent any
-  stage{
+  stages{
     stage('clone stage'){
       steps{
         git credentialsId: 'linhvv12', url: 'https://github.com/linhvv12/flask-docker.git'
@@ -9,7 +9,7 @@ pipeline {
     }
   
 
-    stage("build") {
+    stage('build') {
       steps {
         withDockerRegistry(credentialsId: 'docker-hub', url: 'https://index.docker.io/v1/') 
           sh 'docker build -t  linhvv2/flask-docker:v10'
