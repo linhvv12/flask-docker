@@ -17,7 +17,7 @@ pipeline {
 
     stage("build") {
       steps {
-        agent { node {label "master"}}
+        agent { node {label 'master'}}
          withCredentials([usernamePassword(credentialsId: 'Docker-hub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
             sh 'echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin'
             sh "docker build -t ${DOCKER_IMAGE}"
