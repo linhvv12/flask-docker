@@ -1,7 +1,13 @@
 pipeline {
 
   agent any
-
+  stage{
+    stage('clone stage'){
+      steps{
+        git credentialsId: 'linhvv12', url: 'https://github.com/linhvv12/flask-docker.git'
+      }
+    }
+  
 
     stage("build") {
       steps {
@@ -12,4 +18,4 @@ pipeline {
       }
     }
   }
-
+}
