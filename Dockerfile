@@ -1,6 +1,6 @@
 FROM ubuntu:latest
-RUN apt-get httpd -y
-RUN apt-get htop -y
+RUN apt-get install httpd -y
+RUN apt-get install htop -y
 WORKDIR /var/www/html
-ENTRYPOINT ["httpd","htop"]
+ENTRYPOINT ["htop"]
 CMD ["-D","FORCEGROUND"]
