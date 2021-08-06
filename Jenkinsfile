@@ -2,14 +2,14 @@ pipeline {
 
   agent any
 
-  stages {
+ 
     stage("Test") {
           docker {
             image 'ubuntu:latest'
           }
       
       }
-    }
+    
 
     stage("build") {
     
@@ -20,7 +20,7 @@ pipeline {
         
       }
     }
-  }
+  
 
   post {
     success {
@@ -30,4 +30,4 @@ pipeline {
       echo "FAILED"
     }
   }
-
+}
