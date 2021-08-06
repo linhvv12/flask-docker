@@ -13,7 +13,7 @@ pipeline {
 
     stage('build') {
       steps {
-        withDockerRegistry(credentialsId: 'docker-hub', url: 'https://index.docker.io/v1/') 
+        withDockerRegistry(credentialsId: 'docker-hub', url: 'https://hub.docker.com/repository/docker/linhvv2/flask-docker') 
           sh 'docker build -t  linhvv2/flask-docker:v10'
           sh 'docker push  linhvv2/flask-docker:v10'
         
