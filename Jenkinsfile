@@ -5,10 +5,11 @@ pipeline {
   stages {
     stage("Test") {
       steps{
+        agent{
           docker {
             image 'ubuntu:latest'
           }
-      
+        }
       }
     }
     
