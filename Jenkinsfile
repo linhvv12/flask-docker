@@ -4,7 +4,7 @@ pipeline {
 
         registry = "linhvv2/flask-docker" 
 
-        registryCredential = 'Dockerhub' 
+        registryCredential = 'docker-hub' 
 
         dockerImage = '' 
 
