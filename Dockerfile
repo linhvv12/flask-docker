@@ -1,7 +1,7 @@
 FROM ubuntu:latest
-RUN apt install update -y
-RUN apt install nginx -y
-RUN apt install vim -y
+RUN apt-get install update -y
+RUN apt-get install nginx -y
+RUN apt-get install vim -y
 WORKDIR /var/www/html
 EXPOSE 80
 ADD ./index.html /var/www/html/
