@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-RUN apt-get install update -y
+RUN apt-get update -y
 RUN apt-get install nginx -y
 RUN apt-get install vim -y
 WORKDIR /var/www/html
